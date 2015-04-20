@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Grid Component</title>
+
+    <style type="text/css">
+        table {
+            border-collapse:collapse;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:smaller;
+            font-weight:100;
+        }
+
+        table, td, th {
+            border-color: #a4abb2;
+            padding-left:1em;
+        }
+      
+
+        thead, tfoot {
+            background-color:#e7e9eb;
+        }
+
+        .header-first-col input {
+            width:25px;
+        }
+
+        .header-first-col, tbody td:first-child {
+            width:80px;
+            text-align:left;
+        }
+
+        .header-second-col input {
+            width:120px;
+        }
+
+        .header-second-col, tbody td:first-child + td {
+            width:180px;
+        }
+        
+        #price-field {
+            width:80px;
+        }
+
+        .header-third-col {
+            width:160px;
+        }
+
+        .header-fourth-col input {
+            width:80px;
+        }
+
+        .header-fourth-col {
+            width:140px;
+        }
+
+        #units-field {
+            width:60px;
+        }
+
+        .header-fifth-col {
+            width:120px;
+        }
+
+        .header-sixth-col {
+            width:90px;
+        }
+
+        #items-pages {
+           padding-right:2px;
+           padding-left:330px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="6">Drag a column header and drop it here to group by that column</td>
+            </tr>
+            <tr>
+                <td class="header-first-col">ProductID</td>
+                <td class="header-second-col">Product name</td>
+                <td class="header-third-col">Unit price</td>
+                <td class="header-fourth-col">Quantity per unit</td>
+                <td class="header-fifth-col">Units in stock</td>
+                <td class="header-sixth-col">Discontinued</td>
+            </tr>
+            <tr>
+                <td class="header-first-col">
+                    <form method="post" action="#">
+                        <input type="text" name="product-id" readonly="readonly" />
+                    </form>
+                </td>
+                <td class="header-second-col">
+                    <form method="post" action="#">
+                        <input type="text" name="product-name" readonly="readonly" />
+                    </form>
+                </td>
+                <td class="header-third-col">
+                    <form method="post" action="#">
+                        <input type="text" name="sorted-by-price" id="price-field" />
+                        <input type="image" src="funnelButton.png" name="submit-button" alt="By Price" />
+                    </form>
+                </td>
+                <td class="header-fourth-col">
+                    <form method="post" action="#">
+                        <input type="text" name="quantity-unit" readonly="readonly" />
+                    </form>
+                </td>
+                <td class="header-fifth-col">
+                    <form method="post" action="#">
+                        <input type="text" name="units" id="units-field" />
+                        <input type="image" src="funnelButton.png" name="submit-button" alt="Units" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="is-discontinued" id="discontinued-button" />
+                        <label for="discontinued-button">
+                            <input type="image" src="funnelButton.png" name="submit-button" alt="Discontinued button" />
+                        </label>
+                    </form>
+                </td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <form method="post" action="#">
+                        <input type="image" src="firstPreviousButton.png" name="previous-great" alt="Previous button" />
+                        <input type="image" src="secondPreviousButton.png" name="previous-small" alt="Previous button" />
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">&hellip;</a>
+                        <input type="image" src="secondNextButton.png" name="next-small" alt="Next button" />
+                        <input type="image" src="firstNextButton.png" name="next-small" alt="Next button" />
+                        &nbsp; &nbsp; Page size:
+                        <select name="page-size">
+                            <option value="5" selected="selected">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                        <span id="items-pages">335104 items in 33511 pages</span>
+                    </form>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>&#36;18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="discontinued-checked" value="discontinued-true" disabled="disabled" />
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chang</td>
+                <td>&#36;19.00</td>
+                <td>24 - 12 oz bottles</td>
+                <td>17</td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="discontinued-checked" value="discontinued-true" disabled="disabled" />
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aniseed Syrup</td>
+                <td>&#36;10.00</td>
+                <td>12 - 550 ml bottles</td>
+                <td>13</td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="discontinued-checked" value="discontinued-true" disabled="disabled" />
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Chef Anton's Cajun Seasoning</td>
+                <td>&#36;22.00</td>
+                <td>48 - 6 oz jars</td>
+                <td>53</td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="discontinued-checked" value="discontinued-true" disabled="disabled" />
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Chef Anton's Gumbo Mix</td>
+                <td>&#36;21.35</td>
+                <td>36 boxes</td>
+                <td>0</td>
+                <td>
+                    <form method="post" action="#">
+                        <input type="checkbox" name="discontinued-checked" value="discontinued-true" checked="checked" disabled="disabled" />
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

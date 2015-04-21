@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>LinkedIn</title>
+</head>
+<body>
+    <header>
+        <h2>
+            <a href="#" title="Home">LinkedIn</a>
+        </h2>
+        <nav>
+            <ul>
+                <li><a href="#" title="Home">Home</a></li>
+                <li><a href="#" title="About">What is LinkedIn?</a></li>
+                <li><a href="#" title="Registration">Join Today</a></li>
+                <li>
+                    <div id="sign-in">
+                        Sign In
+                        <form method="post" action="/">
+                            <ul>
+                                <li>
+                                    <label for="mail-field">E-mail:</label>
+                                    <input type="text" name="mail-log-in" id="mail-field" />
+                                </li>
+                                <li>
+                                    <label for="pass-field">Password:</label>
+                                    <input type="password" name="pass-log-in" id="pass-field" />
+                                </li>
+                                <li>
+                                    <input type="submit" name="submit-button" value="Sign In" />
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <hr />
+    </header>
+    <main>
+        <header>
+            <h1>Over 175 million professionals use LinkedIn to exchange information, ideas and opportunities</h1>
+            <ul>
+                <li>Stay informed about your contacts and industry</li>
+                <li>Find the people and knowledge you need to achieve your goals</li>
+                <li>Control your professional identity online</li>
+            </ul>
+        </header>
+        <section id="registration">
+            <h3>Join LinkedIn Today</h3>
+            <article>
+                SignUp
+                <form action="/" method="post">
+                    <ul>
+                        <li>First Name:</li>
+                        <li><input type="text" name="first-name" /></li>
+                        <li>Last Name:</li>
+                        <li><input type="text" name="last-name" /></li>
+                        <li>E-mail:</li>
+                        <li><input type="email" name="new-mail" /></li>
+                        <li>Password:</li>
+                        <li><input type="password" name="new-pass" placeholder="6 or more characters" /></li>
+                    </ul>
+                    <input type="submit" name="submit-button" value="Join Now"/>
+                </form>
+            </article>
+            <article>
+                Already on LinkedIn? <a href="#" title="SignIn">Sign In</a>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h4>Search for someone by name:</h4>
+        <form action="/" method="post">
+            <ul>
+                <li>First name: <input type="text" name="first-name-wanted" /></li>
+                <li>Last name: <input type="text" name="last-name-wanted" /></li>
+            </ul>
+        </form>
+    </footer>
+</body>
+</html>
